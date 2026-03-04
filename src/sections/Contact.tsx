@@ -71,13 +71,34 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    const handleSubmit = async (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsSubmitting(true);
+
+  try {
+    await emailjs.send(
+      "service_vx3bwue",
+      "template_1jj3syy",
+      {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      "_dr9ZmpeTzikXmyCd"
+    );
+
+    setIsSubmitted(true);
+    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    setTimeout(() => setIsSubmitted(false), 5000);
+
+  } catch (error) {
+    console.error("Email failed:", error);
+  }
+
+  setIsSubmitting(false);
+};
 
   try {
     await emailjs.send(
