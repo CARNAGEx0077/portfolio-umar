@@ -8,7 +8,7 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
-   
+    /* ✅ Modern alias setup (NO baseUrl) */
     "paths": {
       "@/*": ["./src/*"]
     },

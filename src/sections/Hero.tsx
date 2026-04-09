@@ -134,7 +134,7 @@ export default function Hero() {
                 {/* Main image */}
                 <div className="relative w-[280px] h-[380px] sm:w-[320px] sm:h-[430px] md:w-[380px] md:h-[510px] lg:w-[420px] lg:h-[560px] rounded-2xl overflow-hidden hero-image-container">
                   <img
-                    src="dist/assets/hero-portrait.jpg"
+                    src="public/assets/hero-portrait.jpg"
                     alt="Portfolio Portrait"
                     className="w-full h-full object-cover grayscale contrast-110"
                   />
